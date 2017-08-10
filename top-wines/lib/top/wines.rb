@@ -1,22 +1,24 @@
-require "top/wines/version"
+require 'top/wines'
 require 'nokogiri'
-require 'open-url'
+require 'open-uri'
+require 'pry'
 
 module Top
-  module Wines
-
-    class TopWines
+  class Wines
     # Your code goes here...
       attr_accessor :name, :year, :score, :price
 
-      def list #does this need to be a class or instance method?
+      def list
         html = Nokogiri::HTML(open("http://top100.winespectator.com/lists"))
+        binding.pry
 
         wine = self.new
-        wine.name =
-        wine.year =
-        wine.score =
-        wine.price =
+        wine.name = html.search()
+        wine.year = html.search()
+        wine.score = html.search()
+        wine.price = html.search()
+
+
         #this is the method that shows the list of wines
       end
 
@@ -26,7 +28,8 @@ module Top
         input = gets.strip
 
           if input == "I'm thirsty" || "Im thirsty"
-            list
+            #list
+            puts "Let's get started!(temporary)"
           else
             puts "Remember, it's always happy hour somewhere!"
           end
