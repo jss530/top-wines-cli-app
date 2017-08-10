@@ -10,5 +10,13 @@ require "top/wines"
 # require "pry"
 # Pry.start
 
+wine = Top::Wines::TopWines.new
+
+puts "Welcome to the top 100 wines of the world list!"
+
+wine.show_wines?
+
+
+
 require "irb"
 IRB.start(__FILE__)
