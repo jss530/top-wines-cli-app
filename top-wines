@@ -1,9 +1,0 @@
-goal:
-
-when a user types 'Show me the top 100 wines', a numbered list will appear
-
-computer will prompt: enter the number of any wine to see the description:
-
-when user types the number, the tasting note is given
-    -- if no number is entered, prompt will stay
-    -- if wrong number/letter is entered, an "invalid number, please try again" message will appear 
