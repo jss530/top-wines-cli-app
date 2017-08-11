@@ -8,12 +8,11 @@ module Top
         html = Nokogiri::HTML(open("http://top100.winespectator.com/lists"))
         binding.pry
 
-        wine = self.new
-        wine.rank = html.search("#table td.rank").text
-        wine.name = html.search(".sort-text").text
-        wine.year = html.search("#table td.vintage").text
-        wine.score = html.search("#table td.score").text
-        wine.price = html.search("#table td.price").text
+        @rank = html.css(".rank").text
+        @name = html.css(".sort-text").text
+        @year = html.css("#table td.vintage").text
+        @score = html.css("#table td.score").text
+        @price = html.css("#table td.price").text
 
         #rank: #table td.rank
         #name: .sort-text
