@@ -9,6 +9,9 @@ require "top/wines"
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
+module Top
+ class Wines; end
+end
 
 wine = Top::Wines.new
 

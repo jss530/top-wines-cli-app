@@ -1,23 +1,26 @@
-require 'top/wines'
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
 
 module Top
   class Wines
     # Your code goes here...
-      attr_accessor :name, :year, :score, :price
+      attr_accessor :rank, :name, :year, :score, :price
 
       def list
         html = Nokogiri::HTML(open("http://top100.winespectator.com/lists"))
         binding.pry
 
         wine = self.new
-        wine.name = html.search()
-        wine.year = html.search()
-        wine.score = html.search()
-        wine.price = html.search()
+        wine.rank = html.search("#table td.rank").text
+        wine.name = html.search(".sort-text").text
+        wine.year = html.search("#table td.vintage").text
+        wine.score = html.search("#table td.score").text
+        wine.price = html.search("#table td.price").text
 
+        #rank: #table td.rank
+        #name: .sort-text
+        #year: #table td.vintage
+        #score: #table td.score
+        #price: #table td.price
+        #description: #table .table-aditionalInfo.active class tabel-note
 
         #this is the method that shows the list of wines
       end
@@ -27,12 +30,6 @@ module Top
         puts "Enter 'I'm thirsty' to get started:"
         input = gets.strip
 
-          if input == "I'm thirsty" || "Im thirsty"
-            #list
-            puts "Let's get started!(temporary)"
-          else
-            puts "Remember, it's always happy hour somewhere!"
-          end
       end
 
     def call
