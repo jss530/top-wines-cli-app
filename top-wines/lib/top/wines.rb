@@ -13,38 +13,36 @@ module Top
       end
 
       def list
+        wine_list = []
 
+          self.get_wines.children.map do |wine_info|
+            wine_list << wine_info.text
+          end
+
+        wine_list
         binding.pry
-
-        @rank = html.css("h3.float-fix").text
-        @name = html.css("span .wineName span .sort-text").text
-        @price = html.css("#table td.price").text
-
-        #rank: #table td.rank
-        #name: span .wineName span .sort-text
-        #price: #table td.price
-        #description: #table .table-aditionalInfo.active class tabel-note
-
-        #doc.css(".post").each do |post|
-        #  course = Course.new
-        #  course.title = post.css("h2").text
-        #  course.schedule = post.css(".date").text
-        #  course.description = post.css("p").text
-        #  end
-        #this is the method that shows the list of wines
       end
 
       def show_wines?
         #this will show the behavior if user enters I'm thirsty
-        puts "Enter 'I'm thirsty' to get started:"
+        puts "Enter 'Im thirsty!' to get started:"
         input = gets.strip
 
+        if input == "Im thirsty!"
+          self.list
+        else
+          puts "Remember, its always happy hour somewhere!"
+        end
       end
+
+    def description
+      #this will be the scraper to pull an array of descriptions
+    end
 
     def call
       puts "Enter the number of any wine to see its description:"
       input = gets.strip
-
+      #this will pull the array, match the number the user enters -1 in order to list description
     end
   end
 end
