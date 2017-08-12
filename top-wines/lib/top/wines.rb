@@ -4,23 +4,33 @@ module Top
     # Your code goes here...
       attr_accessor :rank, :name, :year, :score, :price
 
+      def get_page
+        html = Nokogiri::HTML(open("https://vinepair.com/articles/best-wines-2016"))
+      end
+
+      def get_wines
+        self.get_page.css("h3.float-fix")
+      end
+
       def list
-        html = Nokogiri::HTML(open("http://top100.winespectator.com/lists"))
+
         binding.pry
 
-        @rank = html.css(".rank").text
-        @name = html.css(".sort-text").text
-        @year = html.css("#table td.vintage").text
-        @score = html.css("#table td.score").text
+        @rank = html.css("h3.float-fix").text
+        @name = html.css("span .wineName span .sort-text").text
         @price = html.css("#table td.price").text
 
         #rank: #table td.rank
-        #name: .sort-text
-        #year: #table td.vintage
-        #score: #table td.score
+        #name: span .wineName span .sort-text
         #price: #table td.price
         #description: #table .table-aditionalInfo.active class tabel-note
 
+        #doc.css(".post").each do |post|
+        #  course = Course.new
+        #  course.title = post.css("h2").text
+        #  course.schedule = post.css(".date").text
+        #  course.description = post.css("p").text
+        #  end
         #this is the method that shows the list of wines
       end
 
