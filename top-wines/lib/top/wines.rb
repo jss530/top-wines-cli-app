@@ -2,7 +2,6 @@
 module Top
   class Wines
     # Your code goes here...
-      attr_accessor :description_list
 
       def get_page
         html = Nokogiri::HTML(open("https://vinepair.com/articles/best-wines-2016"))
@@ -23,9 +22,9 @@ module Top
         puts wine_list
       end
 
-    def description_list
+    def description(index)
       #this will be the scraper to pull an array of descriptions
-      @description_list = ["This wine is truly mind-blowing, and a prime example that Brunello is not the only Tuscan DOCG producing outstanding Sangiovese. In fact, this wine has us wondering whether Montepulciano might be the best place in Tuscany for the grape’s cultivation. Made by a boutique family producer, this wine is a beautiful balance of fruit and earth, with bright cherries equalized by tobacco and leather. What we find truly amazing about this wine is that it is not only drinking beautifully now, but it’s also a bottle that could be saved for years and it will only get better.",
+      description_list = ["This wine is truly mind-blowing, and a prime example that Brunello is not the only Tuscan DOCG producing outstanding Sangiovese. In fact, this wine has us wondering whether Montepulciano might be the best place in Tuscany for the grape’s cultivation. Made by a boutique family producer, this wine is a beautiful balance of fruit and earth, with bright cherries equalized by tobacco and leather. What we find truly amazing about this wine is that it is not only drinking beautifully now, but it’s also a bottle that could be saved for years and it will only get better.",
         "Randall Grahm is a winemaker who continues to impress. His move to close all of his wines with screwcap might be seen by some people as cheapening the wines, but that couldn’t be further from the truth. This is a serious, age-worthy red wine that showcases why Randall is one of this country’s best winemakers. A Rhone-style red blend, the wine is deep and dark with the Syrah playing the dominant role. Flavors of dark berries marry with leather to create a delicious wine.",
         "It’s a rare occurrence to find a wine and winemaker both as exciting as Tabbarini. While Sagrantino may not be a grape that delivers immediately, once it’s aged it can be one of the greatest wines in the world. This bottle is the best example coming out of Montefalco. Ageable for decades, this is a wine that is worth purchasing and holding on to; a fantastic investment.",
       "Good Rioja is one of the greatest bangs for your buck in the wine world. This reserva from one of the region’s top producers doesn’t disappoint. The wine pours a beautiful ruby color with aromas of red cherries, vanilla, and leather. There are flavors of dark red fruit, with nice acidity and balanced tannins.",
@@ -75,12 +74,16 @@ module Top
       "A Burgundian-style Chardonnay with lots of Old-World influence.",
       "This amber wine from Oregon has hints of orange peel and acacia.",
       "Full-bodied and juicy, this is exactly what you hope a California Zin will taste like, at a great price point, too."]
+
+      wine_description = description_list[index]
+      puts wine_description
     end
 
-    def description(index)
-      puts @description_list[index]
+  #  def description(index)
+  #    wine_description = @description_list[index]
+  #    puts wine_description
       #binding.pry
-    end
+  #  end
 
   end
 end
