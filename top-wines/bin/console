@@ -27,13 +27,12 @@ input = gets.strip
   end
 
 puts "Enter the number of any wine to see its description:"
-user_input = gets
+user_input = gets.chomp
 
-  if user_input == "1".."46"
+  if (1..32).include?(user_input)
     wine = Top::Wines.new
-    user_input.to_i
-    list_number = user_input - 1
-    puts wine.description(list_number)
+    index = user_input.to_i - 1
+    wine.description(index)
   else
     puts "Please enter a valid number."
   end
