@@ -14,7 +14,7 @@ module Top
 end
 
 
-puts "Welcome to the top 100 wines of the world list!"
+puts "Welcome to the top wines of the world list!"
 
 puts "To get started, type: I love wine!"
 input = gets.strip
@@ -24,6 +24,18 @@ input = gets.strip
     wine.list
   else
     puts "Please try again - remember, it's always happy hour somewhere!"
+  end
+
+puts "Enter the number of any wine to see its description:"
+user_input = gets
+
+  if user_input == "1".."46"
+    wine = Top::Wines.new
+    user_input.to_i
+    list_number = user_input - 1
+    puts wine.description(list_number)
+  else
+    puts "Please enter a valid number."
   end
 
 require "irb"

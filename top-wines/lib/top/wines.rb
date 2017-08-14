@@ -2,7 +2,6 @@
 module Top
   class Wines
     # Your code goes here...
-      attr_accessor :rank, :name, :year, :score, :price
 
       def get_page
         html = Nokogiri::HTML(open("https://vinepair.com/articles/best-wines-2016"))
@@ -24,14 +23,19 @@ module Top
         #binding.pry
       end
 
-    def description
+    def get_description
       #this will be the scraper to pull an array of descriptions
+      self.get_page.css("p.pin-me")
     end
 
-    def call
-      puts "Enter the number of any wine to see its description:"
-      input = gets.strip
-      #this will pull the array, match the number the user enters -1 in order to list description
+    def description(index)
+      description_list = []
+
+        self.get_description.children.map do |description|
+          description_list << description.text
+        end
+      description_list
     end
+
   end
 end
