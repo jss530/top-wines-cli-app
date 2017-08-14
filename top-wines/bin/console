@@ -13,13 +13,18 @@ module Top
  class Wines; end
 end
 
-wine = Top::Wines.new
 
 puts "Welcome to the top 100 wines of the world list!"
 
-wine.show_wines?
+puts "To get started, type: I love wine!"
+input = gets.strip
 
-
+  if input == "I love wine!"
+    wine = Top::Wines.new
+    wine.list
+  else
+    puts "Please try again - remember, it's always happy hour somewhere!"
+  end
 
 require "irb"
 IRB.start(__FILE__)

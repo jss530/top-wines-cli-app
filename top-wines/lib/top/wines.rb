@@ -19,24 +19,9 @@ module Top
             wine_list << wine_info.text
           end
 
-        wine_list
-        binding.pry
-      end
-
-      def print_wines
-        #this method will print out the list of wines nicely
-      end
-
-      def show_wines?
-        #this will show the behavior if user enters I'm thirsty
-        puts "Enter 'Im thirsty!' to get started:"
-        input = gets.strip
-
-        if input == "Im thirsty!"
-          self.print_wines
-        else
-          puts "Remember, its always happy hour somewhere!"
-        end
+        wine_list.join("\n")
+        puts wine_list
+        #binding.pry
       end
 
     def description
