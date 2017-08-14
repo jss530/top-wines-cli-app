@@ -8,7 +8,7 @@ module Top
 end
 
 
-puts "Welcome to the top wines of the world list!"
+puts "Welcome to the top 50 wines of the world list!"
 
 puts "To get started, type: I love wine!"
 input = gets.strip
@@ -24,7 +24,7 @@ puts "Enter the number of any wine to see its description, or type 'exit' to exi
 user_input = gets.chomp
 index = user_input.to_i - 1
 
-  if (1..32).include?(index)
+  if (1..50).include?(index)
     wine = Top::Wines.new
     wine.description(index)
   elsif user_input == "exit"
