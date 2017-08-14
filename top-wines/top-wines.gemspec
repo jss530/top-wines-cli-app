@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["'jsifre01@gmail.com'"]
 
   spec.summary       = "A list of the top 50 wines of 2016 according to Vine Pair"
-  spec.description   = "A gem that allows a user to access the top 50 wine list, as well as each wine's tasting note"
+  spec.description   = "A gem that allows a user to access a top 50 wine list on vinepair.com, as well as each wine's tasting note."
   spec.homepage      = "https://github.com/jss530/top-wines-cli-app"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

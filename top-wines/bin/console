@@ -23,16 +23,18 @@ input = gets.strip
     wine = Top::Wines.new
     wine.list
   else
-    puts "Please try again - remember, it's always happy hour somewhere!"
+    puts "Please try again."
   end
 
-puts "Enter the number of any wine to see its description:"
+puts "Enter the number of any wine to see its description, or type 'exit' to exit:"
 user_input = gets.chomp
 index = user_input.to_i - 1
 
   if (1..32).include?(index)
     wine = Top::Wines.new
     wine.description(index)
+  elsif user_input == "exit"
+    puts "Hope you come back soon - remember, it's always happy hour somewhere!"
   else
     puts "Please enter a valid number."
   end

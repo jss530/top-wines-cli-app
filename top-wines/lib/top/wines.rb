@@ -1,8 +1,7 @@
 
 module Top
   class Wines
-    # Your code goes here...
-
+    
       def get_page
         html = Nokogiri::HTML(open("https://vinepair.com/articles/best-wines-2016"))
       end
@@ -78,12 +77,5 @@ module Top
       wine_description = description_list[index]
       puts wine_description
     end
-
-  #  def description(index)
-  #    wine_description = @description_list[index]
-  #    puts wine_description
-      #binding.pry
-  #  end
-
   end
 end

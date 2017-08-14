@@ -1,8 +1,6 @@
 # Top::Wines
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/top/wines`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Top Wines allows you to see the top 50 wines in the world according to Vine Pair. Price and vintage information is also provided. If you'd like to learn more about a specific wine, you can select it according to number to read a short description and tasting note.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To see the top 50 list, type "I love wine!" when prompted to do so. If one of the wines strikes your fancy, enter its number when prompted to do so. Otherwise, you can type 'exit' to exit the list.
 
 ## Development
 
@@ -33,4 +31,3 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/'jsifre01-49710'/top-wines. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
