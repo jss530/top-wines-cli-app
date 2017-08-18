@@ -15,15 +15,18 @@ module Top
     def self.scrape_wines
       self.get_wines.children.map do |wine_info|
         Top::Wines.new(wine_info.text)
-        #wine_list << wine_info.text
       end
     end
 
     def self.scrape_wine_descriptions
+      description_list = []
+
       self.get_descriptions[3..52].each_with_index do |desc, i|
         wine = Top::Wines.all[i]
         wine.description = desc.text
+        description_list << wine.description
       end
+      description_list
     end
   end
 end
