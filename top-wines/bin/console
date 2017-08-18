@@ -2,36 +2,23 @@
 
 require "bundler/setup"
 require "top/wines"
+require "top/scraper"
+require "top/cli"
 
-module Top
- class Wines; end
-end
+Top::CLI.new.start
 
 
-puts "Welcome to the top 50 wines of the world list!"
 
-puts "To get started, type: I love wine!"
-input = gets.strip
 
-  if input == "I love wine!"
-    wine = Top::Wines.new
-    wine.list
-  else
-    puts "Please try again."
-  end
-
-puts "Enter the number of any wine to see its description, or type 'exit' to exit:"
-user_input = gets.chomp
-index = user_input.to_i - 1
-
-  if (1..50).include?(index)
-    wine = Top::Wines.new
-    wine.description(index)
-  elsif user_input == "exit"
-    puts "Hope you come back soon - remember, it's always happy hour somewhere!"
-  else
-    puts "Please enter a valid number."
-  end
-
-require "irb"
-IRB.start(__FILE__)
+# puts "Enter the number of any wine to see its description, or type 'exit' to exit:"
+# user_input = gets.chomp
+# index = user_input.to_i - 1
+#
+#   if (1..50).include?(index)
+#     wine = Top::Wines.new
+#     wine.description(index)
+#   elsif user_input == "exit"
+#     puts "Hope you come back soon - remember, it's always happy hour somewhere!"
+#   else
+#     puts "Please enter a valid number."
+#   end
